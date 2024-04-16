@@ -1,37 +1,40 @@
 <html>
      <head>
-        <title>Login</title>
+        <title>Index</title>
      </head>
      <body>
       <center>
-      <h1>Welcome Back</h1>
-      <p>Enter your credential to login</p>
-      <form action="#" method="get">
-         <table>
+         <h1>Sign up</h1>
+         <p>Create your account</p>
+         <form action="#" method="post">
+            <table>
+                <tr>
+                    <td><input type="text" placeholder="Username" name="uname"/></td>
+               </tr>
+               <tr>
+                   <td><input type="email" placeholder="Email" name="email"/></td>
+              </tr>
+               <tr>
+                  <td><input type="password" placeholder="Password" name="pswd"/></td>
+             </tr>
              <tr>
-                 <td>Teachers ID :</td>
-                 <td><input type="text" name="id"/></td>
-            </tr>
-            <tr>
-               <td>Password :</td>
-               <td><input type="password" name="pswd"/></td>
+               <td><input type="password" placeholder="Confirm Password" name="cpswd"/></td>
           </tr>
-          </table>
-          </form>
-          <form>
-          <table>
+       </table>
+       </form>
+       <form>
+           <table>
           <tr>
-            <td><button type="submit" value="Logi">
-             <a href="./aboutus.html">Login</a></button></td>
-            
-        </tr>
-      </table>
-            </form>
-            <p>Forgot Password?</p><br>
-            <p>Dont have an account? 
-               <button type="button" value="Sign up">
-               <a href="./signup.html">Sign up</a>
-               </button></p>
+               <td>
+                  <button type="button" value="Sign up">
+                     <a href="./html/login.html">Sign up</a>
+                     </button></td>
+           </tr>
+   </table>
+               </form>
+               <p>Already have an account? <button type="button" value="Login">
+                  <a href="./html/login.html">Login</a></button>
+               </p>
             </center>
-     </body>
+       </body>
 </html> 
