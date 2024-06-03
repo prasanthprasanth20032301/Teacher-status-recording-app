@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Tasks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Java script Tasks</h1>
+        <h1>Task 1</h1>
+        <div class="row my-4">
+            <div class="col">Positive or Negative</div>
+            <div class="col"><input type="number" id="posNegNum" onkeyup="findPosOrNeg()" class="form-control"
+                    placeholder="+ve/-ve Number" /></div>
+            <div class="col"><span id="posNegMsg"></span></div>
+            <script>
+                function findPosOrNeg() {
+                    let posNegNum = Number(document.getElementById('posNegNum').value);
+                    let posNegMsg = "";
+                    if (posNegNum > 0) {
+                        posNegMsg = "Positive Number";
+                    } else if (posNegNum == 0) {
+                        posNegMsg = "Zero";
+                    } else if (posNegNum < 0) {
+                        posNegMsg = "Negative Number";
+                    }
+                    document.getElementById('posNegMsg').innerHTML = posNegMsg;
+                }
+            </script>
+        </div>
+        <div class="row my-4">
+            <div class="col">Odd Or Even</div>
+            <div class="col"><input type="number" id="oddEvenNum" onkeyup="findOddOrEven()" class="form-control"
+                    placeholder="Odd/Even Num" /></div>
+            <div class="col"><span id="oddEvenMsg"></span></div>
+            <script>
+                function findOddOrEven() {
+                    let oddEvenNum = Number(document.getElementById('oddEvenNum').value);
+                    let oddEvenMsg = "";
+                    if ((oddEvenNum % 2) == 0) {
+                        oddEvenMsg = "Even";
+                    } else if ((oddEvenNum % 2) == 1) {
+                        oddEvenMsg = "Odd";
+                    }
+                    document.getElementById('oddEvenMsg').innerHTML = oddEvenMsg;
+                }
+            </script>
+        </div>
+        <div class="row my-4">
+            <div class="col">Number Full Name</div>
+            <div class="col"><input type="text" id="fullFormNum" onkeyup="findNumFullName()" class="form-control"
+                    placeholder="Number" /></div>
+            <div class="col"><span id="fullFormNumMsg"></span></div>
+            <script>
+                function findNumFullName() {
+                    let fullFormNum = document.getElementById('fullFormNum').value;
+                    let fullFormNumMsg = "";
+                    if (fullFormNum == "1")
+                        fullFormNumMsg = "One";
+                    else if (fullFormNum == "2")
+                        fullFormNumMsg = "Two";
+                    else if (fullFormNum == "3")
+                        fullFormNumMsg = "Three";
+                    else if (fullFormNum == "4")
+                        fullFormNumMsg = "Four";
+                    else if (fullFormNum == "5")
+                        fullFormNumMsg = "Five";
+                    else
+                        fullFormNumMsg = "error";
+                    document.getElementById('fullFormNumMsg').innerHTML = fullFormNumMsg;
+                }
+            </script>
+        </div>
+        <div class="row my-4">
+            <div class="col">Greatest of 2 Num</div>
+            <div class="col">
+                <input type="number" id="gr2Num1" onkeyup="findGr2Num()" class="form-control" placeholder="Num 1" />
+                <input type="number" id="gr2Num2" onkeyup="findGr2Num()" class="form-control" placeholder="Num 2" />
+            </div>
+            <div class="col"><span id="gr2NumMsg"></span></div>
+            <script>
+                function findGr2Num() {
+                    let a = document.getElementById('gr2Num1').value;
+                    let b = document.getElementById('gr2Num2').value;
+                    let result = "";
+                    if(a>b){
+                        result = a;
+                    }
+                    else{
+                        result = b;
+                    }
+                    document.getElementById('gr2NumMsg').innerHTML = result;
+                }   
+            </script>
+        </div>
+        <div class="row my-4">
+            <div class="col">Smallest of 3 Number</div>
+            <div class="col">
+                <input type="number" id="sml3Num1" onkeyup="findsml3Num()" class="form-control" placeholder="Num 1" />
+                <input type="number" id="sml3Num2" onkeyup="findsml3Num()" class="form-control" placeholder="Num 2" />
+                <input type="number" id="sml3Num3" onkeyup="findsml3Num()" class="form-control" placeholder="Num 3" />
+            </div>
+            <div class="col"><span id="sml3NumMsg"></span></div>
+            <script>
+                function findsml3Num() {
+                    let a = Number(document.getElementById('sml3Num1').value);
+                    let b = Number(document.getElementById('sml3Num2').value);
+                    let c = Number(document.getElementById('sml3Num3').value);
+                    let res = " ";
+
+                    if (a < b && a < c) {
+                        res = a;
+                    }
+                    else if (b < a && b < c) {
+                        res = b;
+                    }
+                    else if (c < a && c < b) {
+                        res = c;
+                    }
+                    document.getElementById('sml3NumMsg').innerHTML = res;
+                }
+            </script>
+        </div>
+        <h1>Task 2</h1>
+        <div class="row my-4">
+            <div class="col">Allow Student Base don attendance Percent</div>
+            <div class="col">
+                <input type="number" id="totDays" class="form-control" placeholder="Total Days" />
+                <input type="number" id="attDays" class="form-control" placeholder="Attendance Days" />
+                <select id="mdLeave" class="form-select">
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+                <button type="button" class="btn btn-primary" onclick="findStudentEligibility()">Find
+                    Eligibility</button>
+            </div>
+            <div class="col"><span id="attStdAllowMsg"></span></div>
+            <script>
+                function findStudentEligibility() {
+                    let totDays = Number(document.getElementById('totDays').value);
+                    let attDays = Number(document.getElementById('attDays').value);
+                    let mdLeave = document.getElementById('mdLeave').value;
+                    let msg = document.getElementById('attStdAllowMsg');
+                    let result = "";
+                    let attPercent = (100 * attDays) / totDays;
+
+                    if (attPercent > 75 || mdLeave == "Yes") {
+                        result = "Allowed";
+                        msg.style.backgroundColor = "green";
+                    } else {
+                        result = "Not Allowed";
+                        msg.className = "bg-danger";
+                    }
+                    msg.innerHTML = result;
+                }
+            </script>
+            <div class="row my-4">
+                <div class="col">Bill Amount</div>
+                <div class="col"><input type="number" id="blamt" onkeyup="disc()" class="form-control"
+                        placeholder="bill_amt" /></div>
+                <div class="col"><span id="billamtmsg"></span></div>
+                <script>
+                    function disc() {
+                        var ba = Number(document.getElementById('blamt').value);
+                        var res = "";
+                        if (ba > 2000) {
+                            res = ba - (ba * 0.1);
+                        }
+                        document.getElementById('billamtmsg').innerHTML = res;
+                    }
+                    </script>
+            </div>
+            <div class="row my-4">
+                <div class="col">Enter the Salary</div>
+                <div class="col"><input type="number" id="sal" class="form-control" placeholder="salary"/></div>
+                <div class="col">Enter your Experience</div>
+                <div class="col"><input type="number" id="exp" class="form-control" placeholder="Experience"/></div>
+                <div class="col"><button type="button" class="btn btn-primary" onclick="salExp()">check</button></div>
+                <div class="col"><span id="sal_exp"></span></div>
+                 </div>
+                 <script>
+                    function salExp(){
+                     let a=Number(document.getElementById("sal").value);
+                     let b=Number(document.getElementById("exp").value);
+                     let c="";
+                     if(a<30000 && b>3){
+                      c=a+(a*(30/100))
+                      }
+                      else{
+                      c="Not eligible for getting Hike"
+                      }
+                      document.getElementById("sal_exp").innerHTML=c;
+                    }
+                </script>
+                <div class="row my-4">
+                    <div class="col">apply 3 percent service charges</div>
+                    <div class="col">
+                        <input type="number" id="ent_bill" class="form-control" placeholder="Enter bill amount" />
+                    </div>
+                    <div class="col">
+                        <select id="p_mode" class="form-select">
+                            <option>cash</option>
+                            <option>card</option>
+                        </select>
+                        <button type="button" class="btn btn-primary" onclick="serviceCharges()">check</button>
+                    
+                    <div class="col"><span id="apply_charges"></span></div>
+                    </div>
+                    <script>
+                     function serviceCharges(){
+                        let a=Number(document.getElementById("ent_bill").value);
+                        let b=document.getElementById("p_mode").value
+                        let c=a
+                        if(b=="card"){
+                        c+=a*(8/100)
+                        }
+                        else{
+                            c+=a*(5/100)
+                        }
+                        document.getElementById("apply_charges").innerHTML=c;
+                        }
+                    </script>
+                    <div class="row my-4">
+                        <div class="col">Enter the mark</div>
+                        <div class="col"><input type="text" id="marks" class="grade"></div>
+                        <div class="col"><button type="button" class="btn btn-primary"  onclick="GradeSystem()">Check</button></div>
+                        <div class="col"><span id="grade_system"></span></div>
+                    </div>
+                    <script>
+                        function GradeSystem(){
+                            let a=Number(document.getElementById("marks").value);
+                            let b="";
+                            if(a>=90 && a<=100){
+                            b="A Grade"
+                            }
+                            else if(a>=80 && a<90){
+                            b="B Grade"
+                            }
+                            else if(a>=70 && a<80){
+                                b="C Grade"
+                            }
+                            else if(a>=60 && a<70){
+                                b="D Grade"
+                            }
+                            else if(a>=50 && a<60){
+                                b="E Grade"
+                            }
+                            else{
+                                b="Fail"
+                            }
+                            document.getElementById("grade_system").innerHTML=b;
+                        }
+
+                    </script>
+                  </div>
+                  <h1>TASK 3</h1>
+                   <h1>Traffic Signal</h1>
+                  <div class="row" style="height: 200px;">
+                    <div class="col-4 border border-dark"></div>
+                    <div class="col-2 border border-dark" id="northLeft" style="background-color: green;"></div>
+                    <div class="col-2 border border-dark" id="NR" style="background-color: green;"></div>
+                    <div class="col-4 border border-dark"></div>
+                </div>
+
+                <div class="row" style="height: 100px;">
+                    <div class="col-4 border border-dark" id="WR" style="background-color: green;"></div>
+                    <div class="col-2 border bg-light border-dark" ><button type="button" class="btn btn-outline-dark" onclick="North()">North</button>
+                    </div>
+                    <div class="col-2 border bg-light border-dark"><button type="button" class="btn btn-outline-dark" onclick="East()">East</button>
+                    </div>
+                    <div class="col-4 border border-dark" id="eastLeft" style="background-color: green;"></div>
+                  </div>
+                  <div class="row" style="height: 100px;">
+                    <div class="col-4 border border-dark" id="westLeft" style="background-color: green;"></div>
+                    <div class="col-2 border bg-light border-dark"><button type="button" class="btn btn-outline-dark" onclick="West()">West</button>
+                    </div>
+                    <div class="col-2 border bg-light border-dark"><button type="button" class="btn btn-outline-dark" onclick="South()">South</button>
+                    </div>
+                    <div class="col-4 border border-dark" id="ER" style="background-color: green;"></div>
+                  </div>
+                  <div class="row" style="height: 200px;">
+                    <div class="col-4 border border-dark"></div>
+                    <div class="col-2 border border-dark" id="SR" style="background-color: green;"></div>
+                    <div class="col-2 border border-dark" id="southLeft" style="background-color: green;"></div>
+                    <div class="col-4 border border-dark"></div>
+                  </div>
+                  <script>
+        function North(){
+            ER.style.backgroundColor = "red";
+            SR.style.backgroundColor = "red";
+            WR.style.backgroundColor = "red";
+        }
+
+        function East(){
+            SR.style.backgroundColor = "red";
+            WR.style.backgroundColor = "red";
+            NR.style.backgroundColor = "red";
+        }
+
+        function South(){
+            WR.style.backgroundColor = "red";
+            NR.style.backgroundColor = "red";
+            ER.style.backgroundColor = "red";
+        }
+
+        function West(){
+            NR.style.backgroundColor = "red";
+            ER.style.backgroundColor = "red";
+            SR.style.backgroundColor = "red";
+        }
+    </script>
+                <h1>TASK 4</h1>
+                <h1>PARKING</h1>
+                   <div class="row my-4">
+                    <div class="col bg-success" id="slot1">slot1<span id="sm1" style="color:white"></span></div>
+                    <div class="col bg-success" id="slot2">slot2<span id="sm2" style="color:white"></span></div>
+                    <div class="col bg-success" id="slot3">slot3<span id="sm3" style="color:white"></span></div>
+                    <div class="col bg-success" id="slot4">slot4<span id="sm4" style="color:white"></span></div>
+                   </div>
+                <div class="row my-4">
+                <div class="col">Booking Slot</div>
+                <div class="col">
+                <select id="slot" class="form-select">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
+            <div class="row my-4">
+                <div class="col">Vehical Number</div>
+                <div class="col"><input id="vehi" type="text"></div>
+            </div>
+            <div class="text-center">
+            <div class="row my-4">
+                <div class="col"><button type="button" onclick="book()" class="btn btn-primary">Book</button></div>
+            </div>
+            <div class="row my-4">
+                <div class="col"><button type="button" onclick="release()" class="btn btn-primary">Release</button></div>
+            </div>
+            </div>
+            <script>
+                function book()
+                {
+                    let slot=document.getElementById('slot').value;
+                    let vehi=document.getElementById('vehi').value;
+                    if (slot==1){
+                        document.getElementById('slot1').classname="bg-danger";
+                        document.getElementById('sm1').innerHTML=vehi;
+                    }else if(slot==2){
+                        document.getElementById('slot2').classname="bg-success";
+                        document.getElementById('sm2').innerHTML=vehi;
+                    }else if(slot==3){
+                        document.getElementById('slot3').classname="bg-success";
+                        document.getElementById('sm3').innerHTML=vehi;
+                    }else if(slot==4){
+                        document.getElementById('slot4').classname="bg-success";
+                        document.getElementById('sm4').innerHTML=vehi;
+                    }
+                }
+                function release(){
+                    let slot=document.getElementById('slot').value;
+                    if(slot==1){
+                        document.getElementById('slot1').classname="bg-danger";
+                        document.getElementById('sm1').innerHTML="";
+                    }
+                    else if(slot==2){
+                        document.getElementById('slot2').classname="bg-danger";
+                        document.getElementById('sm2').innerHTML="";
+                    }
+                    else if(slot==3){
+                        document.getElementById('slot3').classname="bg-danger";
+                        document.getElementById('sm3').innerHTML="";
+                    }
+                    else if(slot==4){
+                        document.getElementById('slot4').classname="bg-danger";
+                        document.getElementById('sm4').innerHTML="";
+                    }
+                }
+            </script>
+            <h1>Task 5</h1>
+            <div class="row my-4">
+                <div class="col">Enter the number</div>
+                <div class="col"><input type="number" id="reverse" onkeyup="RevNum()" class="form-control"/></div>
+                <div class="col"><span id="Rev"></span></div>
+                <script>
+                    function RevNum(){
+                    let a=document.getElementById("reverse").value;
+                    let b="";
+                    while(a!==0){
+                        b=b*10+a%10
+                        a=Math.floor(a/10); 
+                    }
+                    document.getElementById("Rev").innerHTML=b
+                }
+                </script>
+                <div class="row my-4">
+                    <div class="col">Enter the number</div>
+                    <div class="col"><input type="text" id="num1"></div>
+                    <div class="col"><button type="button" class="btn btn-primary"  onclick="numbers()">Check</button></div>
+                    <div class="col"><span id="answer"></span></div>
+                </div>
+                <script>
+                    function numbers() {
+                    let n=Number(document.getElementById("num1").value)
+                    let sum="";
+                        if(n){
+                            sum=sumDigits(n);
+                        }
+                    document. getElementById("answer").innerHTML=sum;
+                }
+                </script>
+                <div class="border border-dark" width="150px" height="200px" style="background-color:bisque;">
+                    <p>welcome <br>1.Recharge <br>2.Check bal</p>
+                    <input type="text" id="ip">
+                    <button type="button" class="btn-primary" onclick="fun()">check</button>
+                    <span id="op"></span>
+                    
+                </div>
+                <div class="row">
+                    <span class="col" id="aaa"></span>
+                </div>
+                <script>
+                    function fun() {
+                        i=document.getElementById("ip").value;
+                        sum="";
+                        if(i==1){
+                            sum="<input type='text' id='rates'><button type='button' class='btn-primary' onclick='ra()'>rate</button>";
+                        }
+                        else if(i==2){
+                            sum="Your balance is 69";
+                        }
+                        else{
+                            sum="invalid input"
+                        }
+                        document.getElementById("op").innerHTML=sum;
+                    }   
+                        function ra(){
+                            let a=document.getElementById("rates").value;
+                            sum="";
+                            if(a != 0){
+                                sum="Recharged successfully Rs:"+a;
+                            }
+                            document.getElementById("op").innerHTML=sum;
+                        }
+                    
+                </script>
+                <div class="row my-4">
+                    <div class="col">select state</div>
+                    <div class="col">
+                            <select id="state" class="form-select">
+                                <option>TN</option>
+                                <option>KL</option>
+                            </select> 
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-primary" onclick="SelectState()">print</button>
+                    </div>
+                    <div class="col"><span id="select_state"></span></div>
+                 </div>
+                 <script>
+                    function SelectState(){
+                    let a=document.getElementById("state").value;
+                    let b="";
+                    if(a=="TN")
+                    {
+                        b="Chennai,Madurai,villupuram";
+                    }else
+                    {
+                        b="plk,Tdhn";
+                    }
+                    document.getElementById("select_state").innerHTML=b;
+                    }
+                 </script>
+                 <h1>Task 6</h1>
+                 <div class="row my-4">
+                    <div class="col">Enter the Number1</div>
+                    <div class="col"><input type="text" id="num1" class="form-control"/></div>
+                    <div class="col">Enter the Number2</div>
+                    <div class="col"><input type="text" id="num2" class="form-control"/></div>
+                    <div class="col"><button type="button" class="btn btn-primary" onclick="EnterNumber()">check</button></div>
+                    <div class="col"><span id="number"></span></div>
+                     </div>
+                     <script>
+                        function EnterNumber(){
+                            
+                            let stpt=document.getElementById("num1").value;
+                            console.log(stpt)
+                            let endpt=document.getElementById("num2").value;
+                            let ans=""
+                            for(let num=stpt; num<=endpt; num++){
+                                console.log(num);
+                            }
+                        document.getElementById("number").innerHTML=ans;
+                        alert(stpt)
+                        }
+                     </script>
+
+                    <div class="row my-4">
+                        <div class="col">Enter the number</div>
+                        <div class="col"><input type="text" id="num"></div>
+                        <div class="col"><button type="button" class="btn btn-primary"  onclick="Multiplication()">print 5 multiply</button></div>
+                        <div class="col"><p id="fivemul"></p></div>
+                    </div>
+                    <script>
+                        function Multiplication(){
+                           // let a=Number(document.getElementById("num").value);
+                            let b="";
+                            for(let row=1;row<=1;row++){
+                                for(let i=1;i<=10;i++){
+                                    c=5*i;
+                                    b=b+"5 * "+i+"="+c+"<br>";
+                                }
+                        }
+                        document.getElementById("fivemul").innerHTML=b;
+                    }
+                    </script>
+                    <div class="row my-4">
+                        <div class="col">Enter the number</div>
+                        <div class="col"><input type="text" id="ips"></div>
+                        <div class="col"><button type="button" class="btn btn-primary"  onclick="Mul()">Check</button></div>
+                        <div class="col"><p id="ops"></p></div>
+                    </div>
+                    <script>
+                        function Mul(){
+                            let a=Number(document.getElementById("ips").value);
+                            let b="";
+                            for(let row=1;row<=1;row++){
+                                for(let i=1;i<=10;i++){
+                                    c=a*i;
+                                    b=b+a+" * "+i+"="+c+"<br>";
+                                }
+                        }
+                        document.getElementById("ops").innerHTML=b;
+                    }
+                    </script>
+                    <div class="row my-4">
+                        <div class="col">Enter the Num1</div>
+                        <div class="col"><input type="text" id="i1" class="form-control"/></div>
+                        <div class="col">Enter the Num2</div>
+                        <div class="col"><input type="text" id="i2" class="form-control"/></div>
+                        <div class="col"><button type="button" class="btn btn-primary" onclick="SumRange()">check</button></div>
+                        <div class="col"><p id="o1"></p></div>
+                         </div>
+                         <script>
+                            function SumRange(){
+                            let startp=Number(document.getElementById("i1").value);
+                            let endp=Number(document.getElementById("i2").value);
+                            let c=0;
+                            
+                                for(let i=startp;i<=endp;i++){
+                                    c+=i;
+                                }
+                        document.getElementById("o1").innerHTML =c;
+                    }
+                         </script>
+                         <div class="row my-4">
+                            <div class="col">Enter the Num1</div>
+                            <div class="col"><input type="text" id="input1" class="form-control"/></div>
+                            <div class="col">Enter the Num2</div>
+                            <div class="col"><input type="text" id="input2" class="form-control"/></div>
+                            <div class="col"><button type="button" class="btn btn-primary" onclick="AvgRange()">check</button></div>
+                            <div class="col"><p id="output1"></p></div>
+                             </div>
+                             <script>
+                                function AvgRange(){
+                                let start=Number(document.getElementById("input1").value);
+                                let end=Number(document.getElementById("input2").value);
+                                let c=0;
+                                let sum=0;
+                                
+                                    for(let i=start;i<=end;i++){
+                                        sum+=i;
+                                        c++;
+                                    }
+                                    let avg=sum/c;
+                            document.getElementById("output1").innerHTML =sum;
+                        }
+                             </script>
+
+            </div> 
+             
+ </body>
+</html>
